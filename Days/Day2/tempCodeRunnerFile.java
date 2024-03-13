@@ -26,10 +26,11 @@ public class UserRemoveElement {
         System.out.print("Enter the value to remove:");
         int val = n.nextInt();
         int newSize = duplicateElement(nums, val);
-        System.out.println("After removing: " + val + ":");
+        System.out.print("After removing: " + val + ":");
         for (int i = 0; i < newSize; i++) {
-            System.out.println(nums[i] + " ");
+            System.out.print(nums[i] + " ");
         }
         n.close();
+
     }
 }
