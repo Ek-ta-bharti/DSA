@@ -1,4 +1,6 @@
-public class Palindrome {
+import java.util.*;
+
+public class UserPalindrome {
     public static boolean example(int x) {
         if (x < 0) {
             return false;
@@ -6,22 +8,19 @@ public class Palindrome {
         int n = x;
         int nums = 0;
         while (n > 0) {
-            int d = n % 10;
-            nums = nums * 10 + d;
+            int digit = n % 10;
+            nums = nums * 10 + digit;
             n = n / 10;
         }
-        // if (nums == x) {
-        // return true;
-        // } else {
-        // return false;
-        // }
         return nums == x;
     }
 
     public static void main(String[] args) {
-        int x = -121;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int x = scanner.nextInt();
         boolean isPalindrome = example(x);
         System.out.println("Is " + x + " a palindrome? " + isPalindrome);
+        scanner.close();
     }
-
 }
