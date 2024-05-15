@@ -1,13 +1,20 @@
 import java.util.*;
 
 public class QueueImplement {
-    
-        public static void main(String[] args) {
+
+    public static void main(String[] args) {
         Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < 10; i++) {
-            q.add(i); // Add each integer i to the queue
+            q.add(i);
         }
-        System.out.println("Queue Value: " + q); // Print the contents of the queue
+        System.out.println("Queue Value: " + q);
+        System.out.println("Queue Size: " + q.size());
+        q.remove();
+        q.remove();
+        q.remove();
+        System.out.println("Queue after remove: " + q);
+        System.out.println("Queue New Size: " + q.size());
+        System.out.println("Queue Value: " + q.peek());
     }
-    
+
 }
