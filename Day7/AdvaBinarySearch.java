@@ -3,7 +3,7 @@ package Day7;
 import java.util.*;
 import java.io.*;
 
-public class BinarySearch1 {
+public class AdvaBinarySearch {
 
     public static int Bs(int arr[], int searchelement, int low, int high) {
         if (low <= high) {
