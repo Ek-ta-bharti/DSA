@@ -18,11 +18,15 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int arr[] = { 3, 5, 8, 12, 67, 98, 666 };
-        int searchelement = 98;
+        int searchelement = 99;
 
         int resul = Bs(arr, searchelement, 0, arr.length - 1);
 
-        System.out.println(resul);
+        if(searchelement == -1){
+            System.out.println("Please enter valid no.>>>");
+        }else{
+            System.out.println(resul);
+        }
     }
 
 }
