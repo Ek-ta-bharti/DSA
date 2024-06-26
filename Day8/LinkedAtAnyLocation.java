@@ -55,6 +55,9 @@ public class LinkedAtAnyLocation {
         list.InsertAtFirst(2);
         list.InsertAtFirst(9);
         list.InsertAtFirst(10);
+        list.InsertAtFirst(109);
+        list.InsertAtFirst(170);
+        list.InsertAtFirst(105);
 
         System.out.println("Before insertion of 10");
         list.display();
