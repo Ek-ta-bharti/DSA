@@ -26,7 +26,7 @@ public class LinkedEnd {
     public void displayLL(){
         Node current = head;
         while(current != null){
-            System.out.println(current.data + " ");
+            System.out.print(" ----> " + current.data );
             current = current.next;
         }
     }
@@ -34,7 +34,7 @@ public class LinkedEnd {
         LinkedEnd list = new LinkedEnd();
         list.insertAtEnd(2);
         list.insertAtEnd(9);
-        list.insertAtEnd(7);
+        list.insertAtEnd(10);
 
         System.out.println("Before insertion of 10");
         list.displayLL();
