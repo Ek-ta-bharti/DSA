@@ -1,4 +1,4 @@
-public class LLDeleteFirst {
+public class LLDeleteAnywhere {
     Node head;
 
     class Node {
@@ -17,16 +17,23 @@ public class LLDeleteFirst {
         head = newNode;
     }
 
-    public void DeleteFirst(int position) {
-        if (head == null) {
-            return;
+    public void DeleteFirst(int position){
+            if(head == null){
+                return;
+            }
+            Node temp = head;
+            if(position  ==0){
+                head = temp.next;
+                return;
+            }
+            for(int i =0; temp!=null && i<position-1; i++){
+                temp =temp.next;
+            }
+            if(temp ==null && temp.next == null){
+                return;
+            }
+            temp.next = temp.next.next;
         }
-        Node temp = head;
-        if (position == 0) {
-            head = temp.next;
-            return;
-        }
-    }
 
     public void display() {
         Node current = head;
@@ -37,16 +44,19 @@ public class LLDeleteFirst {
     }
 
     public static void main(String[] args) {
-        LLDeleteFirst list = new LLDeleteFirst();
+        LLDeleteAnywhere list = new LLDeleteAnywhere();
         list.InsertAtFirst(2);
         list.InsertAtFirst(9);
         list.InsertAtFirst(10);
+        list.InsertAtFirst(90);
+        list.InsertAtFirst(19);
+        list.InsertAtFirst(4);
 
         System.out.println("Before Deletion of node");
         list.display();
         System.out.println();
 
-        list.DeleteFirst(0);
+        list.DeleteFirst(2);
         System.out.println("After Deletion of node");
         list.display();
         System.out.println();
