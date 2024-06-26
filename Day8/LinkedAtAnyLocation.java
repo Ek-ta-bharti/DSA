@@ -26,11 +26,11 @@ public class LinkedAtAnyLocation {
     // temp.next = newNode;
     // return;
     // }
-    // public void InsertAtFirst(int newData) {
-    // Node newNode = new Node(newData);
-    // newNode.next = head;
-    // head = newNode;
-    // }
+    public void InsertAtFirst(int newData) {
+        Node newNode = new Node(newData);
+        newNode.next = head;
+        head = newNode;
+    }
 
     public void InsertAtAnyWhere(Node prev_node, int newData) {
         if (prev_node == null) {
@@ -52,9 +52,9 @@ public class LinkedAtAnyLocation {
 
     public static void main(String[] args) {
         LinkedAtAnyLocation list = new LinkedAtAnyLocation();
-        list.InsertAtAnyWhere(2);
-        list.InsertAtAnyWhere(9);
-        list.InsertAtAnyWhere(10);
+        list.InsertAtFirst(2);
+        list.InsertAtFirst(9);
+        list.InsertAtFirst(10);
 
         System.out.println("Before insertion of 10");
         list.display();
