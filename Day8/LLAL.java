@@ -67,7 +67,7 @@ class LLAL{
         hn.Display();
         System.out.println();
         
-        Node nodeAtPosition = hn.getNodeAtPosition(2);
+        Node nodeAtPosition = hn.getNodeAtPosition(0);
         hn.InsertAnyLocation(nodeAtPosition, 22);
         hn.Display();
     }
