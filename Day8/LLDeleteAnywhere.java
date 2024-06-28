@@ -56,7 +56,7 @@ public class LLDeleteAnywhere {
         list.display();
         System.out.println();
 
-        list.DeleteFirst(2);
+        list.DeleteFirst(4);
         System.out.println("After Deletion of node");
         list.display();
         System.out.println();
