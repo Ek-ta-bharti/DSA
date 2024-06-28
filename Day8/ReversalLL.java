@@ -11,9 +11,14 @@ public class ReversalLL {
         }
     }
 
-    public void InsertAtFirst
-    {
-
+    public void InsertAtFirst(int newData) {
+        Node newNode = new Node(newData);
+        if (head == null) {
+            head = new Node(newData);
+            return;
+            Node temp = head;
+            head = newNode;
+        }
     }
 
     public static void main(String[] args) {
