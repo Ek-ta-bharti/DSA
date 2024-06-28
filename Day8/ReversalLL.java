@@ -13,16 +13,43 @@ public class ReversalLL {
 
     public void InsertAtFirst(int newData) {
         Node newNode = new Node(newData);
-        if (head == null) {
-            head = new Node(newData);
-            return;
-            Node temp = head;
-            head = newNode;
+        newNode.next =head;
+        head = newNode;
+    }
+
+    public void Reverse(){
+        Node temp = head;
+        Node prev = null;
+        Node nextptr = null;
+        while(temp != null){
+           nextptr = temp.next;
+           temp.next = prev;
+           prev = temp;
+           temp = nextptr;
+        }
+        head =prev;
+    }
+
+    public void Display(){
+        Node curr = head;
+        while(curr != null){
+            System.out.print(" --> " +curr.data);
+            curr = curr.next;
         }
     }
 
     public static void main(String[] args) {
         ReversalLL List = new ReversalLL();
+        List.InsertAtFirst(9);
+        List.InsertAtFirst(6);
+        List.InsertAtFirst(5);
+        List.InsertAtFirst(12);
+        List.InsertAtFirst(1);
+        List.Display();
+        System.out.println();
+        List.Reverse();
+        List.Display();
+        System.out.println();
     }
 
 }
