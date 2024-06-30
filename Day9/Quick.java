@@ -6,22 +6,21 @@ public class Quick {
 
         for (int j = l + 1; j <= h; j++) {
             if (arr[j] <= pivot) {
+                i++;
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
             }
-
-            int tem = arr[l];
-            arr[l] = arr[i];
-            arr[i] = tem;
-
-            return i;
-
         }
 
+        int tem = arr[l];
+        arr[l] = arr[i];
+        arr[i] = tem;
+
+        return i;
     }
 
-    public void Quick(int[] arr, int l, int h) {
+    public static void Quick(int[] arr, int l, int h) {
         if (l < h) {
             int m = Position(arr, l, h);
 
@@ -34,16 +33,17 @@ public class Quick {
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
-        System.out.print(" ");
+        System.out.println(); // To print the elements in a single line
     }
 
     public static void main(String[] args) {
         int[] arr = { 2, 5, 9, 3, 6, 21, 29 };
         int n = arr.length;
-        System.out.println("Before sorting : ");
+        System.out.println("Before sorting: ");
         printArr(arr, n);
 
         Quick(arr, 0, n - 1);
-        System.out.println("After sorting : ");
+        System.out.println("After sorting: ");
+        printArr(arr, n);
     }
 }
