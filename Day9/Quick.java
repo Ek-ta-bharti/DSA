@@ -1,6 +1,27 @@
 public class Quick {
 
-    public void Quick(int arr[], int h, int l) {
+    public static int Position(int[] arr, int l, int h) {
+        int i = l;
+        int pivot = arr[l];
+
+        for (int j = l + 1; j <= h; j++) {
+            if (arr[j] <= pivot) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+
+            int tem = arr[l];
+            arr[l] = arr[i];
+            arr[i] = tem;
+
+            return i;
+
+        }
+
+    }
+
+    public void Quick(int[] arr, int l, int h) {
         if (l < h) {
             int m = Position(arr, l, h);
 
@@ -9,7 +30,7 @@ public class Quick {
         }
     }
 
-    public static void printArr(int arr[], int n) {
+    public static void printArr(int[] arr, int n) {
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -17,7 +38,7 @@ public class Quick {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 2, 5, 9, 3, 6, 21, 29 };
+        int[] arr = { 2, 5, 9, 3, 6, 21, 29 };
         int n = arr.length;
         System.out.println("Before sorting : ");
         printArr(arr, n);
