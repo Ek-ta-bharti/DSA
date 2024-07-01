@@ -22,8 +22,8 @@ class BinaryTree {
     // Method to perform inorder traversal recursively
     public void inorderTraversal(TreeNode node) {
         if (node != null) {
-            inorderTraversal(node.left); // Traverse left subtree
             System.out.print(node.val + " "); // Visit the root
+            inorderTraversal(node.left); // Traverse left subtree
             inorderTraversal(node.right); // Traverse right subtree
         }
     }
