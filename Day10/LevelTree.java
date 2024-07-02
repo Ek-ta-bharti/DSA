@@ -18,6 +18,7 @@ class Max {
         }
         if (level == 1) {
             System.out.println(root.val + " ");
+            return true;
         }
         boolean left = printLevel(root.left, level - 1);
         boolean right = printLevel(root.right, level - 1);
@@ -27,7 +28,6 @@ class Max {
     public static void levelOrder(TreeNode root) {
         int level = 1;
         while (printLevel(root, level) == true) {
-            printLevel(root, level);
             level++;
         }
     }
@@ -40,6 +40,6 @@ class Max {
         root.left.right = new TreeNode(6);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(6);
-
+        levelOrder(root);
     }
 }
