@@ -12,24 +12,24 @@ class TreeNode {
 }
 
 class Max {
-public int maxDepth(TreeNode root) {
-if (root == null) {
-return 0;
-}
-
-int leftDepth = maxDepth(root.left);
-int rightDepth = maxDepth(root.right);
-
-return Math.max(leftDepth, rightDepth) + 1;
-}
-}
-
-public class MaxDept {
-    public static int height(TreeNode root) {
+    public static boolean printLevel(TreeNode root, int level) {
         if (root == null) {
-            return 0;
+            return false;
         }
-        return 1 + Math.max(height(root.left), height(root.right));
+        if (level == 1) {
+            System.out.println(root.val + " ");
+        }
+        boolean left = printLevel(root.left, level - 1);
+        boolean right = printLevel(root.right, level - 1);
+        return (left || right);
+    }
+
+    public static void levelOrder(TreeNode root) {
+        int level = 1;
+        while (printLevel(root, level) == true) {
+            printLevel(root, level);
+            level++;
+        }
     }
 
     public static void main(String[] args) {
@@ -41,6 +41,5 @@ public class MaxDept {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(6);
 
-        System.out.println("Height of tree is : " + height(root));
     }
 }
